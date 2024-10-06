@@ -22,7 +22,7 @@
 <details>
   <summary>Detail</summary>
   
-  > Digital Room Allocation and Billing System
+  > Digital Room Allocation and Billing System <br>
 September 30, 2024
 A Karun Suhas, 231CS210. akarunsuhas.231cs210@nitk.edu.in, 7013586624
 D Kranthi Kiran, 231CS219. dasarikranthikiran.231cs219@nitk.edu.in,
