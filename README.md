@@ -10,7 +10,7 @@
 
   > Team ID: 
 
-  > Member-1: A Karun Suhas, 231CS210. akarunsuhas.231cs210@nitk.edu.in
+  > Member-1: A Karun Suhas, 231CS210, akarunsuhas.231cs210@nitk.edu.in
 
   > Member-2: D Kranthi Kiran, 231CS219, dasarikranthikiran.231cs219@nitk.edu.in
 
