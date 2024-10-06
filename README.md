@@ -29,7 +29,7 @@
 <details>
   <summary>Detail</summary>
   
-  ![sample](https://github.com/user-attachments/assets/588c9f81-997e-431b-8da3-0b40f3713d4e)
+  ![sample]()
 
 </details>
 
@@ -61,7 +61,5 @@
 <details>
   <summary>Detail</summary>
   
-> BBC News. *India train crash: At least 275 dead in Odisha, 2023*. Accessed: 2024-09-30.  
-   [(https://www.bbc.com/news)](https://www.bbc.com/news/world-asia-india-65793257)
-   
+
 </details>
