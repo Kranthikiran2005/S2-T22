@@ -67,12 +67,12 @@ The system checks room availability in real time and automatically
 allocates room based on customer requirements. It displays the final
 billed amount based on services opted by customers.<br>
 This system uses digital logic which minimizes manual errors.<br>
-2 References:<br>
+ References:
 Digital Design, Morris Mano<br>
 https://www.siteminder.com/r/hotel-management-strategies/<br>
 https://www.geeksforgeeks.org/counters-in-digital-logic/?ref=lbp<br>
 https://support.resrequest.com/property-management/room-allocation/<br>
-3 GiHub ID:<br>
+GiHub ID:
 Kranthikiran2005<br>
 https://github.com/Kranthikiran2005?tab=projects<br>
 </details>
