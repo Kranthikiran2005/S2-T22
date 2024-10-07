@@ -81,7 +81,7 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 <details>
   <summary>Detail</summary>
   
-  ![sample]()
+  ![DDS_miniproject_blockdiagram drawio](https://github.com/user-attachments/assets/c183ba8a-50b4-4e49-91bc-8eb3fe73f6cd)]
 
 </details>
 
