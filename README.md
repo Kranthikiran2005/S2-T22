@@ -23,13 +23,7 @@
   <summary>Detail</summary>
   
   > Digital Room Allocation and Billing System <br>
-September 30, 2024 <br>
-A Karun Suhas, 231CS210. akarunsuhas.231cs210@nitk.edu.in, 7013586624 <br>
-D Kranthi Kiran, 231CS219. dasarikranthikiran.231cs219@nitk.edu.in,
-9550596749<br>
-D Sahil Arshan, 231CS223. sahilarshandudekula.231cs223@nitk.edu.in,
-8639390731<br>
-1 Abstract<br>
+
 1. Motivation: Digitalisation of any work reduces the manpower, increases
 the efficiency and reduces the time consumption. Manual allocation of
 rooms takes a lot of time, errors may occur due to confusion in vacancies
