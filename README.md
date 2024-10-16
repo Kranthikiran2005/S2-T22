@@ -84,7 +84,7 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 <details>
   <summary>Detail</summary>
 
-  > 
+  > ![WhatsApp Image 2024-10-16 at 11 52 01 PM](https://github.com/user-attachments/assets/3b72cee2-4cae-4ae3-8ae8-2381f2ba6ac5)
 > Truth Table for billing
 
 | D2 | D1 | D0 | AC | WiFi | VIP | PWD | Days | Billing Amount |
@@ -193,7 +193,18 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 <details>
   <summary>Detail</summary>
 
-  > Update a neat logisim circuit diagram
+  > Main Circuit
+> ID generator circuit
+> 4 bit binary to BCD converter
+> 7 bit binary to BCD converter
+> double sharing non ac room module
+> double sharing ac room module
+> Bill calculator module for pwd special room
+> Bill calculator module for VIP room
+> Bill calculator module for double sharing ac room
+> Bill calculator module for double sharing non - ac room
+> pwd special room module
+> vip room module
 </details>
 
 <!-- Fifth Section -->
