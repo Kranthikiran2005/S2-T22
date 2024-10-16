@@ -193,18 +193,28 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 <details>
   <summary>Detail</summary>
 
-  > Main Circuit
+  > Main Circuit<br>
+  
+
+<submodules>
+
 > ID generator circuit
-> 4 bit binary to BCD converter
-> 7 bit binary to BCD converter
-> double sharing non ac room module
-> double sharing ac room module
-> Bill calculator module for pwd special room
+> 4 bit binary to BCD converter<br>
+
+> 7 bit binary to BCD converter<br>
+
+> double sharing non ac room module<br>
+
+> double sharing ac room module<br>
+
+> Bill calculator module for pwd special room<br>
 > Bill calculator module for VIP room
 > Bill calculator module for double sharing ac room
 > Bill calculator module for double sharing non - ac room
 > pwd special room module
 > vip room module
+
+</submodules>
 </details>
 
 <!-- Fifth Section -->
