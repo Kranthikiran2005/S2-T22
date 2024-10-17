@@ -262,9 +262,8 @@ https://github.com/Kranthikiran2005?tab=projects<br>
     output reg [3:0] room5,      
     output reg [1:0] ac_wifi     
 );
-    reg [15:0] room_cost;        // Room cost calculation
-    reg [3:0] id_counter;        // ID generator (unique ID for each customer)
-
+    reg [15:0] room_cost;        
+    reg [3:0] id_counter;        
     initial begin
         room1 = 4'b0000;
         room2 = 4'b0000;
