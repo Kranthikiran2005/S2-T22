@@ -628,16 +628,18 @@ endmodule
 </details>
 
 <details>
-  <summary>Output</summary>
+<summary>Output</summary>
+
+  
 ![WhatsApp Image 2024-10-17 at 2 02 29 AM](https://github.com/user-attachments/assets/0fb253f4-80c8-40d1-98bd-49cd47b7912a)
 </details>
 
 ## References
 <details>
   <summary>Detail</summary>
-  Digital Design, Morris Mano
-https://www.siteminder.com/r/hotel-management-strategies/
-https://www.geeksforgeeks.org/counters-in-digital-logic/?ref=lbp
-https://support.resrequest.com/property-management/room-allocation/
+  Digital Design, Morris Mano<br>
+https://www.siteminder.com/r/hotel-management-strategies/<br>
+https://www.geeksforgeeks.org/counters-in-digital-logic/?ref=lbp<br>
+https://support.resrequest.com/property-management/room-allocation/<br>
 
 </details>
