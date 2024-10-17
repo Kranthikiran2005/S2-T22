@@ -248,20 +248,19 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 
   
   module hotel_booking(
-    input [2:0] room_selection,  // 3-bit input to select a specific room (1-6)
+    input [2:0] room_selection, 
     input ac_selection,         
     input wifi_selection,        
     input [2:0] days,            
-    input register,              // Register button to confirm booking
+    input register,              
     output reg [15:0] bill,      
-    output reg [3:0] room1,      // Room 1 booking
-    output reg [3:0] room2,      // Room 2 booking
-    output reg [3:0] room3_1,    // Room 3.1 booking
-    output reg [3:0] room3_2,    // Room 3.2 booking
-    output reg [3:0] room4_1,    // Room 4.1 booking
-    output reg [3:0] room4_2,    // Room 4.2 booking
-    output reg [3:0] room5,      // Room 5 booking
-    output reg [1:0] ac_wifi     // AC and Wi-Fi combined selection
+    output reg [3:0] room1,      
+    output reg [3:0] room2,      
+    output reg [3:0] room3_1,    
+    output reg [3:0] room3_2,    
+    output reg [3:0] room4_1,    
+    output reg [3:0] room5,      
+    output reg [1:0] ac_wifi     
 );
     reg [15:0] room_cost;        // Room cost calculation
     reg [3:0] id_counter;        // ID generator (unique ID for each customer)
