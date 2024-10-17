@@ -246,7 +246,8 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 
 
 
-  
+  ```verilog
+
   module hotel_booking(
     input [2:0] room_selection, 
     input ac_selection,         
