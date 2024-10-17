@@ -182,22 +182,19 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 
 
 
-<submodules>
-
+<details>
+<summary>Detail</summary>
 > ID generator circuit<br>
-![ID generator](https://github.com/user-attachments/assets/18086955-c46d-477c-9fdd-5264337161fc)
+![ID generator](https://github.com/user-attachments/assets/18086955-c46d-477c-9fdd-5264337161fc)<br>
 > 4 bit binary to BCD converter<br>
-![4 bit binary to BCD converter](https://github.com/user-attachments/assets/e1ef6e73-5f96-4045-969f-4b232489d54b)
+![4 bit binary to BCD converter](https://github.com/user-attachments/assets/e1ef6e73-5f96-4045-969f-4b232489d54b)<br>
 > 7 bit binary to BCD converter<br>
-![7 bit binary to BCD converter](https://github.com/user-attachments/assets/293a0f5d-0a2f-460d-97ec-755a59360675)
-> double sharing non ac room module<br>
-![double sharing non ac room module](https://github.com/user-attachments/assets/1ba05940-f165-410d-bcd8-e807bc0bc09c)
-> double sharing ac room module<br>
-![Bill calculator module for double sharing ac room](https://github.com/user-attachments/assets/81bb6b36-3394-4df8-a532-72ee14efcf9d)
+![7 bit binary to BCD converter](https://github.com/user-attachments/assets/293a0f5d-0a2f-460d-97ec-755a59360675)<br>
+![Bill calculator module for double sharing ac room](https://github.com/user-attachments/assets/81bb6b36-3394-4df8-a532-72ee14efcf9d)<br>
 > Bill calculator module for pwd special room<br>
-![Bill calculator module for pwd special room](https://github.com/user-attachments/assets/9123fbf0-4ca1-4ff5-8166-6a67f90f3716)
+![Bill calculator module for pwd special room](https://github.com/user-attachments/assets/9123fbf0-4ca1-4ff5-8166-6a67f90f3716)<br>
 > Bill calculator module for VIP room<br>
-![Bill calculator module for vip room](https://github.com/user-attachments/assets/2c5b0258-d44b-4a12-86bb-68210e132e57)
+![Bill calculator module for vip room](https://github.com/user-attachments/assets/2c5b0258-d44b-4a12-86bb-68210e132e57) <br>
 > Bill calculator module for double sharing ac room<br>
 ![Bill calculator module for double sharing ac room](https://github.com/user-attachments/assets/3514a017-f1ac-4177-bcc7-b2808ba80d9c)<br>
 > Bill calculator module for double sharing non - ac room<br>
@@ -206,23 +203,27 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 ![pwd special room module](https://github.com/user-attachments/assets/86da0a15-b049-4cf1-9d8c-99a10e55aa5b)<br>
 > vip room module<br>
 ![vip room module](https://github.com/user-attachments/assets/8efc2b18-51cc-42e9-9e5f-21fd437ee474)<br>
-</submodules>
+  > double sharing non ac room module<br>
+![double sharing non ac room module](https://github.com/user-attachments/assets/1ba05940-f165-410d-bcd8-e807bc0bc09c)<br>
+> double sharing ac room module<br>
+  ![double sharing ac room module](https://github.com/user-attachments/assets/dae385e9-ceff-4e38-8aa5-c2fa7afa877e)<br>
+</details>
 </details>
 
 <!-- Fifth Section -->
 ## Verilog Code
 <details>
   <summary>Detail</summary>
-
-  Behavioural module hotel_booking(
+  // Behavioural model
+  module hotel_booking(
     input [2:0] room_selection,  // 3-bit input to select a specific room (1-6)
     input ac_selection,         
     input wifi_selection,        
     input [2:0] days,            
     input register,              // Register button to confirm booking
     output reg [15:0] bill,      
-    output reg [3:0] room1,      
-    output reg [3:0] room2,      
+    output reg [3:0] room1,      // Room 1 booking
+    output reg [3:0] room2,      // Room 2 booking
     output reg [3:0] room3_1,    // Room 3.1 booking
     output reg [3:0] room3_2,    // Room 3.2 booking
     output reg [3:0] room4_1,    // Room 4.1 booking
