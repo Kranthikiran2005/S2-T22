@@ -75,7 +75,7 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 <details>
   <summary>Detail</summary>
   
-  ![DDS_miniproject_blockdiagram drawio](https://github.com/user-attachments/assets/c183ba8a-50b4-4e49-91bc-8eb3fe73f6cd)]
+  ![DDS_miniproject_blockdiagram drawio](https://github.com/user-attachments/assets/c183ba8a-50b4-4e49-91bc-8eb3fe73f6cd)
 
 </details>
 
@@ -83,9 +83,30 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 ## Working
 <details>
   <summary>Detail</summary>
+  <br>
+ Description<br>
+  <br>
+  The project involves implementing a hotel room allocation and billing system using digital circuits. This system manages the allocation of five different types of rooms, like special rooms for physically challenged individuals, 2 VIP rooms, a room with two-person capacity and AC, a room with two-person capacity and without AC. Real-time room availability is indicated by lights: a green light signals vacancy, and a red light signals that the room is occupied. Customers choose their desired room by entering their preferences for facilities such as AC and Wi-Fi, using binary inputs (1 for selected, 0 for not selected). Additionally, they enter the number of days they wish to stay. And finally, they click a button corresponding to a room to book the room.<br>
+<br>
+Main Module<br>
+<br>
+The main module integrates the room modules and the bill calculator module. Each room has its own indicators and inputs to manage real-time availability and customer selection. The system ensures that only vacant rooms can be booked. A unique customer ID is generated, incremented with each new booking, and stored in a register corresponding to the booked room.<br>
+<br>
+Room Module<br>
+<br>
+Each room module consists of multiple registers to store customer details, such as the unique customer ID, the selected facilities (AC and Wi-Fi), and the number of days of stay. The room's vacancy is managed by a counter, which starts counting from zero upon booking. The counter increments daily and stops when the count equals the stored number of days. When this happens, the stored data is cleared, making the room available for a new booking. Once a room is occupied, it cannot be booked by another customer until the previous booking is complete and the data is reset.<br>
+<br>
+Bill Calculator Module<br>
+<br>
+The bill calculator module receives inputs from the room module and calculates the total bill. Two multiplexers handle the selection of facilities (AC and Wi-Fi). If a facility is selected, the multiplexer outputs the corresponding cost; otherwise, it outputs zero. The costs of the selected facilities are summed using an adder (Adder1). This value is then added to the room’s daily charge using another adder (Adder2). The total cost per day is calculated and then multiplied by the number of days using a multiplier to generate the final bill.<br>
+<br>
+This system ensures that room allocation and billing are efficiently handled, with real-time updates and automatic clearance of room data after the stay period ends.<br>
+<br>
+> Flowchart<br>
 
-  > ![WhatsApp Image 2024-10-16 at 11 52 01 PM](https://github.com/user-attachments/assets/3b72cee2-4cae-4ae3-8ae8-2381f2ba6ac5)
-> Truth Table for billing
+   ![WhatsApp Image 2024-10-16 at 11 52 01 PM](https://github.com/user-attachments/assets/3b72cee2-4cae-4ae3-8ae8-2381f2ba6ac5)<br>
+   
+> Truth Table for billing<br>
 
 | D2 | D1 | D0 | AC | WiFi | VIP | PWD | Days | Billing Amount |
 |----|----|----|----|------|-----|-----|------|----------------|
