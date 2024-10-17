@@ -249,22 +249,25 @@ https://github.com/Kranthikiran2005?tab=projects<br>
   ```verilog
 
   module hotel_booking(
-    input [2:0] room_selection, 
+    input [2:0] room_selection,  // 3-bit input to select a specific room (1-6)
     input ac_selection,         
     input wifi_selection,        
     input [2:0] days,            
-    input register,              
+    input register,              // Register button to confirm booking
     output reg [15:0] bill,      
     output reg [3:0] room1,      
     output reg [3:0] room2,      
-    output reg [3:0] room3_1,    
-    output reg [3:0] room3_2,    
-    output reg [3:0] room4_1,    
-    output reg [3:0] room5,      
-    output reg [1:0] ac_wifi     
+    output reg [3:0] room3_1,    // Room 3.1 booking
+    output reg [3:0] room3_2,    // Room 3.2 booking
+    output reg [3:0] room4_1,    // Room 4.1 booking
+    output reg [3:0] room4_2,    // Room 4.2 booking
+    output reg [3:0] room5,      // Room 5 booking
+    output reg [1:0] ac_wifi     // AC and Wi-Fi combined selection
 );
-    reg [15:0] room_cost;        
-    reg [3:0] id_counter;        
+
+    reg [15:0] room_cost;        // Room cost calculation
+    reg [3:0] id_counter;        // ID generator (unique ID for each customer)
+        
     initial begin
         room1 = 4'b0000;
         room2 = 4'b0000;
@@ -354,10 +357,12 @@ https://github.com/Kranthikiran2005?tab=projects<br>
         end
     end
 endmodule
+```
 </details>
 <details>
   <summary>Gate Level </summary>
 
+ ```verilog
   module hotel_booking_gate_level (
     input [3:0] id,                  // Customer ID
     input ac_selection,              // AC selection
@@ -492,14 +497,14 @@ module Multiplier_16bit (
 );
     assign product = a * b;  
 endmodule
-
+```
 
 </details>
 
 <details>
   <summary>Test bench</summary>
 
-
+```verilog
   module hotel_booking_tb;
 
     reg [2:0] room_selection;  // To select the room (1-6)
@@ -619,7 +624,7 @@ endmodule
     end
 
 endmodule
-  
+  ```
 </details>
 
 ## References
