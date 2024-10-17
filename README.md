@@ -165,7 +165,7 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 <!-- Fourth Section -->
 ## Logisim Circuit Diagram
 <details>
-  <summary>Detail</summary>
+  <summary>Main Circuit</summary>
 
   > Main Circuit<br>
   
@@ -178,37 +178,71 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 
 ![final](https://github.com/user-attachments/assets/f228615c-9591-47ad-b191-2d66cc6f5a41)
 
-
+</details>
 
 
 
 <details>
-<summary>Detail</summary>
-> ID generator circuit<br>
-![ID generator](https://github.com/user-attachments/assets/18086955-c46d-477c-9fdd-5264337161fc)<br>
-> 4 bit binary to BCD converter<br>
+<summary>  ID generator</summary>
+
+![ID generator](https://github.com/user-attachments/assets/18086955-c46d-477c-9fdd-5264337161fc)
+</details>
+<details>
+<summary>  4 bit binary to BCD converter</summary>
+
 ![4 bit binary to BCD converter](https://github.com/user-attachments/assets/e1ef6e73-5f96-4045-969f-4b232489d54b)<br>
-> 7 bit binary to BCD converter<br>
+</details>
+<details>
+  <summary> 7 bit binary to BCD converter</summary>
+
 ![7 bit binary to BCD converter](https://github.com/user-attachments/assets/293a0f5d-0a2f-460d-97ec-755a59360675)<br>
+</details>
+<details>
+  <summary> Bill calculator module for double sharing ac room</summary>
+  
 ![Bill calculator module for double sharing ac room](https://github.com/user-attachments/assets/81bb6b36-3394-4df8-a532-72ee14efcf9d)<br>
-> Bill calculator module for pwd special room<br>
+</details>
+<details>
+  <summary>  Bill calculator module for pwd special room</summary>
+
 ![Bill calculator module for pwd special room](https://github.com/user-attachments/assets/9123fbf0-4ca1-4ff5-8166-6a67f90f3716)<br>
-> Bill calculator module for VIP room<br>
+</details>
+<details>
+  <summary>  Bill calculator module for vip room</summary>
+
 ![Bill calculator module for vip room](https://github.com/user-attachments/assets/2c5b0258-d44b-4a12-86bb-68210e132e57) <br>
-> Bill calculator module for double sharing ac room<br>
+</details>
+<details>
+  <summary> Bill calculator module for double sharing ac room</summary>
+
 ![Bill calculator module for double sharing ac room](https://github.com/user-attachments/assets/3514a017-f1ac-4177-bcc7-b2808ba80d9c)<br>
-> Bill calculator module for double sharing non - ac room<br>
+</details>
+<details>
+  <summary> Bill calculator module for double sharing non - ac room</summary>
+
 ![Bill calculator module for double sharing non ac room](https://github.com/user-attachments/assets/b0f7b274-68b5-4515-939b-1cfc6a101feb)<br>
-> pwd special room module<br>
+</details>
+<details>
+  <summary>  Pwd special room module</summary>
+
 ![pwd special room module](https://github.com/user-attachments/assets/86da0a15-b049-4cf1-9d8c-99a10e55aa5b)<br>
-> vip room module<br>
+</details>
+<details>
+  <summary> vip room module</summary>
+
 ![vip room module](https://github.com/user-attachments/assets/8efc2b18-51cc-42e9-9e5f-21fd437ee474)<br>
-  > double sharing non ac room module<br>
+</details>
+<details>
+  <summary>  Double sharing non AC room module</summary>
+  
 ![double sharing non ac room module](https://github.com/user-attachments/assets/1ba05940-f165-410d-bcd8-e807bc0bc09c)<br>
-> double sharing ac room module<br>
+</details>
+<details>
+  <summary>  Double Sharing AC room module</summary>
+
   ![double sharing ac room module](https://github.com/user-attachments/assets/dae385e9-ceff-4e38-8aa5-c2fa7afa877e)<br>
 </details>
-</details>
+
 
 <!-- Fifth Section -->
 ## Verilog Code
