@@ -176,8 +176,7 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 
 
 
-![final](https://github.com/user-attachments/assets/f228615c-9591-47ad-b191-2d66cc6f5a41)
-
+![Main circuit](https://github.com/user-attachments/assets/0c12cba8-c2a9-4925-8dbd-e881f8ac640a)
 </details>
 
 
@@ -197,11 +196,7 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 
 ![7 bit binary to BCD converter](https://github.com/user-attachments/assets/293a0f5d-0a2f-460d-97ec-755a59360675)<br>
 </details>
-<details>
-  <summary> Bill calculator module for double sharing ac room</summary>
-  
-![Bill calculator module for double sharing ac room](https://github.com/user-attachments/assets/81bb6b36-3394-4df8-a532-72ee14efcf9d)<br>
-</details>
+
 <details>
   <summary>  Bill calculator module for pwd special room</summary>
 
@@ -247,8 +242,11 @@ https://github.com/Kranthikiran2005?tab=projects<br>
 <!-- Fifth Section -->
 ## Verilog Code
 <details>
-  <summary>Detail</summary>
-  // Behavioural model
+  <summary>Behaviorial</summary>
+
+
+
+  
   module hotel_booking(
     input [2:0] room_selection,  // 3-bit input to select a specific room (1-6)
     input ac_selection,         
@@ -265,7 +263,6 @@ https://github.com/Kranthikiran2005?tab=projects<br>
     output reg [3:0] room5,      // Room 5 booking
     output reg [1:0] ac_wifi     // AC and Wi-Fi combined selection
 );
-
     reg [15:0] room_cost;        // Room cost calculation
     reg [3:0] id_counter;        // ID generator (unique ID for each customer)
 
@@ -358,6 +355,272 @@ https://github.com/Kranthikiran2005?tab=projects<br>
         end
     end
 endmodule
+</details>
+<details>
+  <summary>Gate Level </summary>
+
+  module hotel_booking_gate_level (
+    input [3:0] id,                  // Customer ID
+    input ac_selection,              // AC selection
+    input wifi_selection,            // Wi-Fi selection
+    input [2:0] days,                // Number of days
+    input register,                  // Register signal (button press)
+    output [15:0] bill,              // Bill output
+    output [3:0] room1,              // Room 1 allocation
+    output [3:0] room2,              // Room 2 allocation
+    output [3:0] room3_1,            // Room 3_1 allocation
+    output [3:0] room3_2,            // Room 3_2 allocation
+    output [3:0] room4_1,            // Room 4_1 allocation
+    output [3:0] room4_2,            // Room 4_2 allocation
+    output [3:0] room5               // Room 5 allocation
+);
+
+    // Room availability checks (for room1 to room5)
+    wire room1_available, room2_available, room3_1_available, room3_2_available, room4_1_available, room4_2_available, room5_available;
+
+    // Initial room costs
+    wire [15:0] room_cost;
+    assign room_cost = (room1_available ? 16'd700 : 
+                        room2_available ? 16'd700 : 
+                        room3_1_available ? 16'd400 : 
+                        room3_2_available ? 16'd400 : 
+                        room4_1_available ? 16'd400 : 
+                        room4_2_available ? 16'd400 : 
+                        room5_available ? 16'd500 : 16'd0);
+
+    // Adder for AC and Wi-Fi costs
+    wire [15:0] extras_cost;
+    wire [15:0] ac_cost = ac_selection ? 16'd200 : 16'd0;
+    wire [15:0] wifi_cost = wifi_selection ? 16'd100 : 16'd0;
+
+    RippleCarryAdder_16bit adder_extras(extras_cost, ac_cost, wifi_cost);
+
+    // Total cost (room cost + extras)
+    wire [15:0] total_cost;
+    RippleCarryAdder_16bit adder_total(total_cost, room_cost, extras_cost);
+
+    // Multiply total cost by number of days
+    wire [31:0] bill_full;
+    Multiplier_16bit multiplier(bill_full, total_cost, days);
+
+    // Output only the lower 16 bits of the bill
+    assign bill = bill_full[15:0];
+
+    // Room allocation (using DFFs and availability checks)
+    wire [3:0] zero = 4'b0000;
+
+    Comparator_4bit cmp1(room1_available, room1, zero);
+    Room_Allocation room_alloc1(room1, id, room1_available, register);
+
+    Comparator_4bit cmp2(room2_available, room2, zero);
+    Room_Allocation room_alloc2(room2, id, room2_available, register);
+
+    // Continue similarly for other rooms (room3_1, room3_2, room4_1, room4_2, room5)
+
+endmodule
+module DFF (
+    output reg q, 
+    input d, 
+    input clk
+);
+    always @(posedge clk) begin
+        q <= d;
+    end
+endmodule
+
+module Comparator_4bit (
+    output equal, 
+    input [3:0] a, 
+    input [3:0] b
+);
+    wire [3:0] xnor_out;
+    xnor(xnor_out[0], a[0], b[0]);
+    xnor(xnor_out[1], a[1], b[1]);
+    xnor(xnor_out[2], a[2], b[2]);
+    xnor(xnor_out[3], a[3], b[3]);
+    and(equal, xnor_out[0], xnor_out[1], xnor_out[2], xnor_out[3]);
+endmodule
+module Room_Allocation (
+    output reg [3:0] room,   // Room ID
+    input [3:0] id,          // Customer ID
+    input room_available,    // Room availability
+    input register           // Register signal
+);
+    always @(posedge register) begin
+        if (room_available)
+            room <= id;
+    end
+endmodule
+module AND_Gate (
+    output y, 
+    input a, 
+    input b
+);
+    assign y = a & b;
+endmodule
+module FullAdder (
+    output sum, 
+    output carry_out, 
+    input a, 
+    input b, 
+    input carry_in
+);
+    wire axb, ab_and_cin;
+    xor(axb, a, b);
+    xor(sum, axb, carry_in);
+    and(ab_and_cin, axb, carry_in);
+    and(carry_out, a, b);
+    or(carry_out, carry_out, ab_and_cin);
+endmodule
+
+module RippleCarryAdder_16bit (
+    output [15:0] sum, 
+    input [15:0] a, 
+    input [15:0] b
+);
+    wire [15:0] carry;
+    
+    FullAdder fa0 (sum[0], carry[0], a[0], b[0], 1'b0);
+    FullAdder fa1 (sum[1], carry[1], a[1], b[1], carry[0]);
+    FullAdder fa2 (sum[2], carry[2], a[2], b[2], carry[1]);
+    // Continue for all bits up to 15
+    FullAdder fa15 (sum[15], carry[15], a[15], b[15], carry[14]);
+endmodule
+module Multiplier_16bit (
+    output [31:0] product,
+    input [15:0] a,
+    input [2:0] b
+);
+    assign product = a * b;  
+endmodule
+
+
+</details>
+
+<details>
+  <summary>Test bench</summary>
+
+
+  module hotel_booking_tb;
+
+    reg [2:0] room_selection;  // To select the room (1-6)
+    reg ac_selection;          // AC selection (1 or 0)
+    reg wifi_selection;        // Wi-Fi selection (1 or 0)
+    reg [2:0] days;            // Number of days to stay
+    reg register;              // Register button to confirm booking
+    wire [15:0] bill;          // Total bill for the stay
+    wire [3:0] room1, room2, room3_1, room3_2, room4_1, room4_2, room5; // Room allocations
+    wire [1:0] ac_wifi;        // AC and Wi-Fi selection status
+
+    // Instantiate the hotel_booking module
+    hotel_booking uut (
+        .room_selection(room_selection),
+        .ac_selection(ac_selection),
+        .wifi_selection(wifi_selection),
+        .days(days),
+        .register(register),
+        .bill(bill),
+        .room1(room1),
+        .room2(room2),
+        .room3_1(room3_1),
+        .room3_2(room3_2),
+        .room4_1(room4_1),
+        .room4_2(room4_2),
+        .room5(room5),
+        .ac_wifi(ac_wifi)
+    );
+
+    // Test sequence
+    initial begin
+        // Initialize
+        room_selection = 3'b000;
+        ac_selection = 0;
+        wifi_selection = 0;
+        days = 3'b000;
+        register = 0;
+        #5;
+
+        // Test 1: Customer selects Room 1, AC, no Wi-Fi, stays for 3 days
+        room_selection = 3'b001;  // Room 1
+        ac_selection = 1;         // AC selected
+        wifi_selection = 0;       // No Wi-Fi
+        days = 3'd3;              // 3 days
+        register = 1;             // Confirm booking
+        #10;
+        register = 0;             // Reset register button
+        #10;
+
+        // Display output for Test 1
+        $display("Test 1: Room Selection = Room 1(VIP), AC = 1, Wi-Fi = 0, Days = 3");
+        $display("Room 1: %b, Bill: %0d", room1, bill);
+        $display("-----------------------------");
+
+        // Test 2: Another customer selects Room 2, no AC, Wi-Fi, stays for 2 days
+        room_selection = 3'b010;  // Room 2
+        ac_selection = 0;         // No AC
+        wifi_selection = 1;       // Wi-Fi selected
+        days = 3'd2;              // 2 days
+        register = 1;             // Confirm booking
+        #10;
+        register = 0;             // Reset register button
+        #10;
+
+        // Display output for Test 2
+        $display("Test 2: Room Selection = Room 2(VIP), AC = 0, Wi-Fi = 1, Days = 2");
+        $display("Room 2: %b, Bill: %0d", room2, bill);
+        $display("-----------------------------");
+
+        // Test 3: Customer selects Room 3.1, no AC, no Wi-Fi, stays for 1 day
+        room_selection = 3'b011;  // Room 3.1
+        ac_selection = 0;         // No AC
+        wifi_selection = 0;       // No Wi-Fi
+        days = 3'd1;              // 1 day
+        register = 1;             // Confirm booking
+        #10;
+        register = 0;             // Reset register button
+        #10;
+
+        // Display output for Test 3
+        $display("Test 3: Room Selection = Room 3.1(Double sharing non-AC room), AC = 0, Wi-Fi = 0, Days = 1");
+        $display("Room 3.1: %b, Bill: %0d", room3_1, bill);
+        $display("-----------------------------");
+
+        // Test 4: 
+        room_selection = 3'b101;  // Room 4.1
+        ac_selection = 1;         // AC selected
+        wifi_selection = 1;       // Wi-Fi selected
+        days = 3'd4;              // 4 days
+        register = 1;             // Confirm booking
+        #10;
+        register = 0;             // Reset register button
+        #10;
+
+        // Display output for Test 4
+        $display("Test 4: Room Selection = Room 4.1(Double sharing AC room), AC = 1, Wi-Fi = 1, Days = 4");
+        $display("Room 4: %b, Bill: %0d", room4_1, bill); 
+        $display("-----------------------------");
+
+        // Test 5: Customer selects Room 5, AC and Wi-Fi, stays for 5 days
+        room_selection = 3'b111;  // Room 5
+        ac_selection = 1;         // AC selected
+        wifi_selection = 1;       // Wi-Fi selected
+        days = 3'd5;              // 5 days
+        register = 1;             // Confirm booking
+        #10;
+        register = 0;             // Reset register button
+        #10;
+
+        // Display output for Test 5
+        $display("Test 5: Room Selection = Room 5(PWD special), AC = 1, Wi-Fi = 1, Days = 5");
+        $display("Room 5: %b, Bill: %0d", room5, bill);
+        $display("-----------------------------");
+
+        // Test complete
+        $finish;
+    end
+
+endmodule
+  
 </details>
 
 ## References
